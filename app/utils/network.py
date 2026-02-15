@@ -1,6 +1,10 @@
 import socket
 import requests
 import json
+import os
+
+# Caminho para salvar nomes personalizados das TVs
+DATA_FILE = "tv_data.json"
 
 def get_local_ip_address():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -21,7 +25,9 @@ def scan_single_ip(ip_address, tv_port=1925, timeout=1):
             try:
                 data = response.json()
                 name = data.get('name', ip_address)
-                return (ip_address, name)
+                # Verifica se temos um nome personalizado salvo
+                custom_name = get_custom_name(ip_address)
+                return (ip_address, custom_name if custom_name else name)
             except:
                 return (ip_address, ip_address)
     except:
@@ -35,3 +41,25 @@ def send_tv_command(ip, port, cmd):
         return True
     except:
         return False
+
+def save_custom_name(ip, name):
+    data = {}
+    if os.path.exists(DATA_FILE):
+        try:
+            with open(DATA_FILE, 'r') as f:
+                data = json.load(f)
+        except: pass
+    data[ip] = name
+    try:
+        with open(DATA_FILE, 'w') as f:
+            json.dump(data, f)
+    except: pass
+
+def get_custom_name(ip):
+    if os.path.exists(DATA_FILE):
+        try:
+            with open(DATA_FILE, 'r') as f:
+                data = json.load(f)
+                return data.get(ip)
+        except: pass
+    return None

@@ -11,38 +11,67 @@ from kivy.uix.progressbar import ProgressBar
 from kivy.clock import Clock
 from kivy.metrics import dp
 from kivy.app import App
+from kivy.graphics import Color, Rectangle
 from app.utils.network import get_local_ip_address, scan_single_ip
+from app.utils.themes import theme_manager
 
 class ScanScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.name = 'scan_screen'
+        theme_manager.bind(bg_color=self._update_bg)
+        self.build_ui()
+
+    def _update_bg(self, *args):
+        self.canvas.before.clear()
+        with self.canvas.before:
+            Color(*theme_manager.bg_color)
+            self.rect = Rectangle(pos=self.pos, size=self.size)
         self.build_ui()
 
     def build_ui(self):
         self.clear_widgets()
-        layout = BoxLayout(orientation='vertical', padding=dp(20), spacing=dp(15))
-        layout.add_widget(Label(text='CONTROLE AOC', font_size='32sp', bold=True, color=(0.2, 0.6, 1, 1), size_hint_y=None, height=dp(60)))
-        self.status_label = Label(text='Pronto para buscar sua TV', size_hint_y=None, height=dp(40))
+        layout = BoxLayout(orientation='vertical', padding=dp(20), spacing=dp(10))
+        
+        # Cabeçalho e Temas
+        header = BoxLayout(size_hint_y=None, height=dp(50))
+        header.add_widget(Label(text='CONTROLE AOC', font_size='24sp', bold=True, color=theme_manager.primary_color))
+        layout.add_widget(header)
+        
+        theme_box = BoxLayout(size_hint_y=None, height=dp(40), spacing=dp(5))
+        theme_box.add_widget(Label(text="Tema:", color=theme_manager.text_color, size_hint_x=0.3))
+        for t_name in theme_manager.themes.keys():
+            btn = Button(text=t_name, font_size='12sp', background_color=theme_manager.primary_color if theme_manager.theme_name == t_name else [0.3, 0.3, 0.3, 1])
+            btn.bind(on_press=lambda x, n=t_name: theme_manager.set_theme(n))
+            theme_box.add_widget(btn)
+        layout.add_widget(theme_box)
+
+        self.status_label = Label(text='Pronto para buscar sua TV', size_hint_y=None, height=dp(30), color=theme_manager.text_color)
         layout.add_widget(self.status_label)
-        self.progress_bar = ProgressBar(max=254, value=0, size_hint_y=None, height=dp(15))
+        
+        self.progress_bar = ProgressBar(max=254, value=0, size_hint_y=None, height=dp(10))
         layout.add_widget(self.progress_bar)
-        self.scan_btn = Button(text='BUSCAR TV NA REDE', size_hint_y=None, height=dp(60), background_color=(0.1, 0.4, 0.8, 1), bold=True)
+        
+        self.scan_btn = Button(text='BUSCAR TV NA REDE', size_hint_y=None, height=dp(50), background_color=theme_manager.primary_color, bold=True)
         self.scan_btn.bind(on_press=self.start_scan)
         layout.add_widget(self.scan_btn)
-        manual_box = BoxLayout(orientation='horizontal', size_hint_y=None, height=dp(50), spacing=dp(10))
-        self.ip_input = TextInput(text='192.168.1.', multiline=False, font_size='18sp', padding=[dp(10), dp(10)])
+        
+        manual_box = BoxLayout(orientation='horizontal', size_hint_y=None, height=dp(45), spacing=dp(10))
+        self.ip_input = TextInput(text='192.168.1.', multiline=False, font_size='16sp')
         manual_box.add_widget(self.ip_input)
-        connect_btn = Button(text='CONECTAR', size_hint_x=0.4, background_color=(0.2, 0.8, 0.2, 1))
+        connect_btn = Button(text='CONECTAR', size_hint_x=0.4, background_color=[0.2, 0.8, 0.2, 1])
         connect_btn.bind(on_press=self.manual_connect)
         manual_box.add_widget(connect_btn)
         layout.add_widget(manual_box)
-        layout.add_widget(Label(text='TVs Encontradas:', size_hint_y=None, height=dp(30), halign='left'))
+        
+        layout.add_widget(Label(text='TVs Encontradas:', size_hint_y=None, height=dp(25), color=theme_manager.text_color))
+        
         scroll = ScrollView()
-        self.tv_list = GridLayout(cols=1, spacing=dp(10), size_hint_y=None)
+        self.tv_list = GridLayout(cols=1, spacing=dp(8), size_hint_y=None)
         self.tv_list.bind(minimum_height=self.tv_list.setter('height'))
         scroll.add_widget(self.tv_list)
         layout.add_widget(scroll)
+        
         self.add_widget(layout)
 
     def start_scan(self, instance):
@@ -70,16 +99,15 @@ class ScanScreen(Screen):
     def _scan_finished(self, dt):
         self.scan_btn.disabled = False
         if not self.tv_list.children:
-            self.status_label.text = "Nenhuma TV encontrada. Tente o IP manual."
+            self.status_label.text = "Nenhuma TV encontrada."
         else:
             self.status_label.text = "Busca finalizada!"
 
     def add_tv_entry(self, ip, name):
-        btn = Button(text=f"{name}\n({ip})", size_hint_y=None, height=dp(70), background_color=(0.3, 0.3, 0.3, 1), halign='center')
+        btn = Button(text=f"{name} ({ip})", size_hint_y=None, height=dp(60), background_color=[0.2, 0.2, 0.2, 1])
         btn.bind(on_press=lambda x: App.get_running_app().connect_to_tv(ip))
         self.tv_list.add_widget(btn)
 
     def manual_connect(self, instance):
         ip = self.ip_input.text.strip()
-        if ip:
-            App.get_running_app().connect_to_tv(ip)
+        if ip: App.get_running_app().connect_to_tv(ip)
