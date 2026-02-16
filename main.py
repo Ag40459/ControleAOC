@@ -22,41 +22,40 @@ from app.screens.remote_landscape import RemoteLandscapeScreen
 from app.utils.network import send_tv_command, send_tv_text, save_custom_name, get_custom_name
 from app.utils.themes import theme_manager
 
-class NetflixCategoryItem(BoxLayout):
-    text = StringProperty("")
-    code = StringProperty("")
-    
-    def on_release(self):
-        app = App.get_running_app()
-        app.open_netflix_category(self.code)
-
 class NetflixSearchPopup(Popup):
     def __init__(self, categories, **kwargs):
         super().__init__(**kwargs)
-        self.title = "Categorias Netflix"
+        self.title = "Buscar Categorias Netflix"
         self.size_hint = (0.9, 0.9)
         self.categories = categories # List of dicts: {'name': ..., 'code': ...}
         
         layout = BoxLayout(orientation='vertical', padding=dp(10), spacing=dp(10))
         
-        # Busca
+        # Campo de Busca
         self.search_input = TextInput(
-            hint_text="Buscar categoria...",
+            hint_text="Digite o nome da categoria...",
             multiline=False,
             size_hint_y=None,
             height=dp(50),
-            font_size='18sp'
+            font_size='18sp',
+            background_color=[0.15, 0.15, 0.15, 1],
+            foreground_color=[1, 1, 1, 1],
+            cursor_color=theme_manager.primary_color
         )
         self.search_input.bind(text=self.filter_categories)
         layout.add_widget(self.search_input)
         
-        # Lista de Resultados (RecycleView para performance)
+        # Lista de Resultados
         self.rv = RecycleView()
-        self.rv.viewclass = 'Button'
         self.rv_layout = GridLayout(cols=1, spacing=dp(5), size_hint_y=None)
         self.rv_layout.bind(minimum_height=self.rv_layout.setter('height'))
         self.rv.add_widget(self.rv_layout)
         layout.add_widget(self.rv)
+        
+        # Botão Fechar
+        close_btn = Button(text="FECHAR", size_hint_y=None, height=dp(50), background_color=[0.6, 0.2, 0.2, 1])
+        close_btn.bind(on_release=self.dismiss)
+        layout.add_widget(close_btn)
         
         self.content = layout
         self.update_list(self.categories)
@@ -71,16 +70,58 @@ class NetflixSearchPopup(Popup):
             btn = Button(
                 text=item['name'],
                 size_hint_y=None,
-                height=dp(50),
-                background_color=[0.2, 0.2, 0.2, 1]
+                height=dp(55),
+                background_color=[0.25, 0.25, 0.25, 1],
+                halign='center',
+                valign='middle'
             )
-            btn.bind(on_release=lambda x, code=item['code']: self.select_category(code))
+            btn.bind(size=btn.setter('text_size'))
+            btn.bind(on_release=lambda x, it=item: self.show_code_modal(it))
             self.rv_layout.add_widget(btn)
 
-    def select_category(self, code):
-        app = App.get_running_app()
-        app.open_netflix_category(code)
-        self.dismiss()
+    def show_code_modal(self, item):
+        content = BoxLayout(orientation='vertical', padding=dp(20), spacing=dp(20))
+        
+        content.add_widget(Label(
+            text=f"Código para:\n[b]{item['name']}[/b]",
+            markup=True,
+            halign='center',
+            font_size='18sp'
+        ))
+        
+        code_label = Label(
+            text=item['code'],
+            font_size='48sp',
+            bold=True,
+            color=theme_manager.primary_color
+        )
+        content.add_widget(code_label)
+        
+        msg_label = Label(
+            text="Digite este código no campo de\nbusca do seu aplicativo Netflix.",
+            halign='center',
+            font_size='14sp',
+            color=[0.7, 0.7, 0.7, 1]
+        )
+        content.add_widget(msg_label)
+        
+        btn = Button(
+            text="ENTENDI",
+            size_hint_y=None,
+            height=dp(60),
+            background_color=theme_manager.primary_color,
+            bold=True
+        )
+        content.add_widget(btn)
+        
+        popup = Popup(
+            title="Código da Categoria",
+            content=content,
+            size_hint=(0.85, 0.6),
+            auto_dismiss=True
+        )
+        btn.bind(on_release=popup.dismiss)
+        popup.open()
 
 class RemoteControlApp(App):
     tv_ip = StringProperty("")
@@ -102,16 +143,18 @@ class RemoteControlApp(App):
     def load_netflix_categories(self):
         csv_path = 'assets/netflix_category_codes.csv'
         if not os.path.exists(csv_path):
-            # Tentar caminho absoluto se relativo falhar no ambiente de dev
             csv_path = '/home/ubuntu/ControleAOC_New/assets/netflix_category_codes.csv'
             
         try:
-            with open(csv_path, mode='r', encoding='utf-8') as f:
-                reader = csv.DictReader(f)
-                self.netflix_categories = [
-                    {'name': f"{row['category']} - {row['subcategory']}", 'code': row['code']}
-                    for row in reader
-                ]
+            if os.path.exists(csv_path):
+                with open(csv_path, mode='r', encoding='utf-8') as f:
+                    reader = csv.DictReader(f)
+                    self.netflix_categories = [
+                        {'name': f"{row['category']} - {row['subcategory']}", 'code': row['code']}
+                        for row in reader
+                    ]
+            else:
+                print("Arquivo CSV não encontrado.")
         except Exception as e:
             print(f"Erro ao carregar categorias: {e}")
             self.netflix_categories = []
@@ -169,24 +212,9 @@ class RemoteControlApp(App):
         else:
             self._show_error("Lista de categorias não encontrada.")
 
-    def open_netflix_category(self, code):
-        # Para abrir uma categoria específica na Netflix via JointSpace
-        # Geralmente é feito enviando a URL profunda ou simulando a digitação no busca
-        # Como a API JointSpace da AOC/Philips é limitada, a melhor forma é abrir o app e digitar ou usar o link se suportado.
-        # Aqui simularemos o envio do código para o campo de busca da Netflix se o app estiver aberto.
-        threading.Thread(target=self._send_netflix_code, args=(code,), daemon=True).start()
-
-    def _send_netflix_code(self, code):
-        # 1. Abre a Netflix (se houver atalho, senão o usuário deve estar nela)
-        # 2. Digita o código
-        send_tv_text(self.tv_ip, self.tv_port, code)
-        # 3. Confirma
-        send_tv_command(self.tv_ip, self.tv_port, "Confirm")
-
     def show_numeric_keyboard(self):
         content = BoxLayout(orientation='vertical', padding=dp(5), spacing=dp(5))
         
-        # Seção Numérica (Top)
         num_grid = GridLayout(cols=3, spacing=dp(5), size_hint_y=0.3)
         keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "-/--", "0", "OK"]
         for k in keys:
@@ -196,10 +224,8 @@ class RemoteControlApp(App):
             num_grid.add_widget(btn)
         content.add_widget(num_grid)
 
-        # Separador
         content.add_widget(Label(text="TECLADO ALFANUMÉRICO (PC)", size_hint_y=None, height=dp(20), font_size='12sp', color=[0.7,0.7,0.7,1]))
 
-        # Seção QWERTY
         qwerty_layout = BoxLayout(orientation='vertical', spacing=dp(2), size_hint_y=0.6)
         rows = [
             ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
@@ -222,7 +248,6 @@ class RemoteControlApp(App):
                 row_box.add_widget(btn)
             qwerty_layout.add_widget(row_box)
         
-        # Linha de Espaço e Fechar
         last_row = BoxLayout(spacing=dp(5), size_hint_y=None, height=dp(45))
         space_btn = Button(text="ESPAÇO", size_hint_x=2)
         space_btn.bind(on_press=lambda x: self.send_text(" "))
