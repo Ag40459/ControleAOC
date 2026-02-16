@@ -42,6 +42,26 @@ def send_tv_command(ip, port, cmd):
     except:
         return False
 
+def send_tv_text(ip, port, text):
+    """
+    Envia texto para a TV. Tenta o endpoint de texto e, se falhar, 
+    pode ser expandido para outros métodos.
+    """
+    try:
+        # Tenta o endpoint de texto do JointSpace (comum em modelos mais novos)
+        url = f"http://{ip}:{port}/1/input/text"
+        res = requests.post(url, json={'text': text}, timeout=1)
+        if res.status_code == 200:
+            return True
+        
+        # Se falhar, tenta enviar como tecla individual (fallback)
+        # Nota: Algumas TVs aceitam o caractere diretamente no campo 'key'
+        url_key = f"http://{ip}:{port}/1/input/key"
+        requests.post(url_key, json={'key': text}, timeout=1)
+        return True
+    except:
+        return False
+
 def save_custom_name(ip, name):
     data = {}
     if os.path.exists(DATA_FILE):

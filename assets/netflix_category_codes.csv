@@ -1,0 +1,27 @@
+category,subcategory,code,description,type
+Biografia,Biografias gerais,3179,Conteúdo baseado na vida real,movies_series
+Biografia,Biografias dramáticas,3652,Histórias dramáticas reais,movies
+Biografia,Biografias criminais,180,Criminosos reais,movies_series
+Ação,Ação geral,1365,Filmes e séries de ação,movies_series
+Ação,Ação militar,2125,Conteúdo militar,movies
+Ação,Artes marciais,8985,Lutas e combate,movies
+Comédia,Comédia geral,6548,Conteúdo humorístico,movies_series
+Comédia,Comédia romântica,5475,Romance com humor,movies
+Drama,Drama geral,5763,Conteúdo dramático,movies_series
+Drama,Drama psicológico,5012,Drama mental intenso,movies
+Ficção científica,Sci-fi geral,1492,Conteúdo futurista,movies_series
+Ficção científica,Sci-fi cult,3916,Sci-fi cult,movies
+Terror,Terror geral,8711,Conteúdo de terror,movies_series
+Terror,Terror cult,10944,Terror alternativo,movies
+Suspense,Suspense geral,8933,Conteúdo de suspense,movies_series
+Suspense,Suspense psicológico,5505,Suspense mental,movies
+Romance,Romance geral,8883,Conteúdo romântico,movies_series
+Adulto,Conteúdo adulto,11881,Conteúdo maduro,movies_series
+Adulto,Conteúdo sensual,29764,Conteúdo sensual,movies_series
+Anime,Anime geral,7424,Animação japonesa,movies_series
+Documentário,Documentários gerais,6839,Conteúdo documental,movies_series
+Crime,Crime geral,5824,Conteúdo criminal,movies_series
+Cult,Filmes cult,7627,Conteúdo cult,movies
+Estrangeiro,Filmes estrangeiros,7462,Conteúdo internacional,movies
+Séries,Séries gerais,83,Todas as séries,series
+Algoritmo,Recomendados pelo algoritmo,839338,Conteúdo personalizado,movies_series
