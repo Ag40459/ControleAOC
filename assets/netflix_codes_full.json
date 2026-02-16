@@ -1,0 +1,1340 @@
+[
+  {
+    "code": 1365,
+    "category": "Action & Adventure",
+    "subcategory": "General",
+    "verified": true
+  },
+  {
+    "code": 43040,
+    "category": "Action & Adventure",
+    "subcategory": "Action Thrillers",
+    "verified": true
+  },
+  {
+    "code": 1568,
+    "category": "Action & Adventure",
+    "subcategory": "Sci‑Fi Action",
+    "verified": true
+  },
+  {
+    "code": 43048,
+    "category": "Thrillers",
+    "subcategory": "Supernatural Thrillers",
+    "verified": true
+  },
+  {
+    "code": 5505,
+    "category": "Thrillers",
+    "subcategory": "Psychological Thrillers",
+    "verified": true
+  },
+  {
+    "code": 8933,
+    "category": "Thrillers",
+    "subcategory": "General Thrillers",
+    "verified": true
+  },
+  {
+    "code": 8711,
+    "category": "Horror",
+    "subcategory": "General Horror",
+    "verified": true
+  },
+  {
+    "code": 10944,
+    "category": "Horror",
+    "subcategory": "Cult Horror",
+    "verified": true
+  },
+  {
+    "code": 947,
+    "category": "Horror",
+    "subcategory": "Supernatural Horror",
+    "verified": true
+  },
+  {
+    "code": 7424,
+    "category": "Anime",
+    "subcategory": "General Anime",
+    "verified": true
+  },
+  {
+    "code": 3179,
+    "category": "Biography",
+    "subcategory": "Biographical",
+    "verified": true
+  },
+  {
+    "code": 3652,
+    "category": "Biography",
+    "subcategory": "Biographical Dramas",
+    "verified": true
+  },
+  {
+    "code": 6548,
+    "category": "Comedy",
+    "subcategory": "General Comedy",
+    "verified": true
+  },
+  {
+    "code": 5475,
+    "category": "Comedy",
+    "subcategory": "Romantic Comedies",
+    "verified": true
+  },
+  {
+    "code": 5763,
+    "category": "Drama",
+    "subcategory": "General Drama",
+    "verified": true
+  },
+  {
+    "code": 5012,
+    "category": "Drama",
+    "subcategory": "Psychological Drama",
+    "verified": true
+  },
+  {
+    "code": 1492,
+    "category": "Sci‑Fi & Fantasy",
+    "subcategory": "General Sci‑Fi",
+    "verified": true
+  },
+  {
+    "code": 3916,
+    "category": "Sci‑Fi & Fantasy",
+    "subcategory": "Cult Sci‑Fi",
+    "verified": true
+  },
+  {
+    "code": 8883,
+    "category": "Romance",
+    "subcategory": "General Romance",
+    "verified": true
+  },
+  {
+    "code": 11881,
+    "category": "Adult",
+    "subcategory": "Mature Content",
+    "verified": true
+  },
+  {
+    "code": 29764,
+    "category": "Adult",
+    "subcategory": "Sensual Content",
+    "verified": true
+  },
+  {
+    "code": 83,
+    "category": "TV Shows",
+    "subcategory": "General TV Shows",
+    "verified": true
+  },
+  {
+    "code": 839338,
+    "category": "Algorithm",
+    "subcategory": "Recommended For You",
+    "verified": true
+  },
+  {
+    "code": 900000,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900001,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900002,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900003,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900004,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900005,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900006,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900007,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900008,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900009,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900010,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900011,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900012,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900013,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900014,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900015,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900016,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900017,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900018,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900019,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900020,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900021,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900022,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900023,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900024,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900025,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900026,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900027,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900028,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900029,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900030,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900031,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900032,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900033,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900034,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900035,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900036,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900037,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900038,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900039,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900040,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900041,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900042,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900043,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900044,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900045,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900046,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900047,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900048,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900049,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900050,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900051,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900052,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900053,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900054,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900055,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900056,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900057,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900058,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900059,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900060,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900061,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900062,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900063,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900064,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900065,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900066,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900067,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900068,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900069,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900070,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900071,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900072,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900073,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900074,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900075,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900076,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900077,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900078,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900079,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900080,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900081,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900082,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900083,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900084,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900085,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900086,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900087,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900088,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900089,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900090,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900091,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900092,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900093,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900094,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900095,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900096,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900097,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900098,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900099,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900100,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900101,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900102,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900103,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900104,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900105,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900106,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900107,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900108,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900109,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900110,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900111,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900112,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900113,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900114,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900115,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900116,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900117,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900118,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900119,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900120,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900121,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900122,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900123,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900124,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900125,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900126,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900127,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900128,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900129,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900130,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900131,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900132,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900133,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900134,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900135,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900136,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900137,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900138,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900139,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900140,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900141,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900142,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900143,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900144,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900145,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900146,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900147,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900148,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900149,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900150,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900151,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900152,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900153,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900154,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900155,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900156,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900157,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900158,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900159,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900160,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900161,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900162,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900163,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900164,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900165,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900166,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900167,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900168,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900169,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900170,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900171,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900172,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900173,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900174,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900175,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900176,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900177,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900178,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900179,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900180,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900181,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900182,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900183,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900184,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900185,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900186,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900187,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900188,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900189,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900190,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900191,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900192,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900193,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900194,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900195,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900196,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900197,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900198,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  },
+  {
+    "code": 900199,
+    "category": "Algorithmic Cluster",
+    "subcategory": "Personalized Cluster",
+    "verified": false
+  }
+]
