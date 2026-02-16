@@ -11,6 +11,7 @@ from kivy.uix.textinput import TextInput
 from kivy.clock import Clock
 from kivy.core.window import Window
 from kivy.properties import StringProperty, ListProperty
+from kivy.metrics import dp
 
 from app.screens.scan_screen import ScanScreen
 from app.screens.remote_portrait import RemotePortraitScreen
@@ -22,7 +23,6 @@ class RemoteControlApp(App):
     tv_ip = StringProperty("")
     tv_name = StringProperty("TV AOC")
     tv_port = 1925
-    supported_keys = ListProperty([])
 
     def build(self):
         self.title = "Controle AOC Pro"
@@ -85,7 +85,7 @@ class RemoteControlApp(App):
         for k in keys:
             cmd = f"Digit{k}" if k.isdigit() else ("DigitDash" if k == "-/--" else "Confirm")
             btn = Button(text=k, font_size='20sp')
-            btn.bind(on_press=lambda x, c=cmd: [self.send_command(c)])
+            btn.bind(on_press=lambda x, c=cmd: self.send_command(c))
             grid.add_widget(btn)
         content.add_widget(grid)
         close = Button(text="FECHAR", size_hint_y=None, height=dp(50))
@@ -94,9 +94,51 @@ class RemoteControlApp(App):
         close.bind(on_press=popup.dismiss)
         popup.open()
 
+    def show_qwerty_keyboard(self):
+        """Cria um teclado alfanumérico QWERTY estilo computador."""
+        content = BoxLayout(orientation='vertical', padding=dp(5), spacing=dp(5))
+        
+        rows = [
+            ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
+            ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+            ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ç"],
+            ["Z", "X", "C", "V", "B", "N", "M", ",", ".", "BACK"]
+        ]
+        
+        for row in rows:
+            row_layout = BoxLayout(spacing=dp(2))
+            for key in row:
+                cmd = f"Digit{key}" if key.isdigit() else key
+                # Nota: Algumas TVs AOC podem não suportar letras diretas via DigitX. 
+                # Se não funcionar, usaremos o mapeamento padrão de entrada.
+                btn = Button(text=key, font_size='14sp')
+                btn.bind(on_press=lambda x, k=key: self.send_command(k))
+                row_layout.add_widget(btn)
+            content.add_widget(row_layout)
+        
+        # Linha de Espaço e OK
+        last_row = BoxLayout(spacing=dp(5), size_hint_y=None, height=dp(50))
+        space_btn = Button(text="ESPAÇO", size_hint_x=2)
+        space_btn.bind(on_press=lambda x: self.send_command("Space"))
+        ok_btn = Button(text="OK", background_color=theme_manager.primary_color)
+        ok_btn.bind(on_press=lambda x: self.send_command("Confirm"))
+        close_btn = Button(text="FECHAR")
+        
+        last_row.add_widget(space_btn)
+        last_row.add_widget(ok_btn)
+        last_row.add_widget(close_btn)
+        content.add_widget(last_row)
+        
+        popup = Popup(title="Teclado Alfanumérico", content=content, size_hint=(0.98, 0.6))
+        close_btn.bind(on_press=popup.dismiss)
+        popup.open()
+
     def send_command(self, cmd):
+        # Mapeamento para garantir compatibilidade com busca (Netflix/YouTube)
+        if cmd == "BACK": cmd = "Back"
+        elif cmd == "Space": cmd = "Space"
+        
         threading.Thread(target=send_tv_command, args=(self.tv_ip, self.tv_port, cmd), daemon=True).start()
 
 if __name__ == '__main__':
-    from kivy.metrics import dp # Garante que dp esteja disponível para o main
     RemoteControlApp().run()
