@@ -2,6 +2,7 @@ from kivy.uix.screenmanager import Screen
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
+from kivy.uix.label import Label
 from kivy.metrics import dp
 from kivy.app import App
 from kivy.graphics import Color, Rectangle
@@ -11,12 +12,22 @@ class RemoteLandscapeScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.name = 'remote_landscape'
+        self.display_label = None
         # Vincula a atualização à mudança de qualquer propriedade do tema
         theme_manager.bind(bg_color=self._update_canvas)
         theme_manager.bind(primary_color=self._update_canvas)
 
     def on_enter(self):
         self._update_canvas()
+        self.update_display_text()
+
+    def update_display_text(self, *args):
+        if not self.display_label: return
+        app = App.get_running_app()
+        if app.tv_ip:
+            self.display_label.text = f"CONECTADO: {app.tv_name} ({app.tv_ip})"
+        else:
+            self.display_label.text = "NÃO CONECTADO"
 
     def _update_canvas(self, *args):
         self.canvas.before.clear()
@@ -31,8 +42,24 @@ class RemoteLandscapeScreen(Screen):
         
         main_layout = BoxLayout(orientation='horizontal', padding=dp(10), spacing=dp(15))
         
-        # COLUNA ESQUERDA (Canais e Home/Back)
+        # COLUNA ESQUERDA (Canais e Home/Back + Display)
         left_col = BoxLayout(orientation='vertical', spacing=dp(10), size_hint_x=0.25)
+        
+        # Display estático na arte superior esquerda (Landscape)
+        display_btn = Button(background_color=theme_manager.display_bg, size_hint_y=0.2)
+        display_btn.bind(on_press=lambda x: app.show_rename_popup())
+        self.display_label = Label(
+            text="Carregando...", 
+            bold=True, 
+            color=theme_manager.display_text, 
+            font_size='12sp',
+            halign='left',
+            valign='middle'
+        )
+        self.display_label.bind(size=self.display_label.setter('text_size'))
+        display_btn.add_widget(self.display_label)
+        left_col.add_widget(display_btn)
+        
         left_col.add_widget(Button(text="CH +", font_size='20sp', bold=True, on_press=lambda x: app.send_command("ChannelUp")))
         left_col.add_widget(Button(text="HOME", background_color=theme_manager.primary_color, bold=True, on_press=lambda x: app.send_command("Home")))
         left_col.add_widget(Button(text="VOLTAR", background_color=[0.4, 0.4, 0.4, 1], on_press=lambda x: app.send_command("Back")))

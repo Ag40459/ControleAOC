@@ -30,8 +30,19 @@ class RemoteControlApp(App):
         self.sm.add_widget(ScanScreen())
         self.sm.add_widget(RemotePortraitScreen())
         self.sm.add_widget(RemoteLandscapeScreen())
+        
+        # Sincroniza o texto do display quando as propriedades mudam
+        self.bind(tv_ip=self._update_screens_text)
+        self.bind(tv_name=self._update_screens_text)
+        
         Window.bind(on_size=self._on_resize)
         return self.sm
+
+    def _update_screens_text(self, *args):
+        for screen_name in ['remote_portrait', 'remote_landscape']:
+            screen = self.sm.get_screen(screen_name)
+            if hasattr(screen, 'update_display_text'):
+                screen.update_display_text()
 
     def _on_resize(self, window, width, height):
         if self.sm.current == 'scan_screen': return

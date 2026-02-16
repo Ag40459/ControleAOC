@@ -13,28 +13,20 @@ class RemotePortraitScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.name = 'remote_portrait'
-        self.marquee_offset = 0
         self.display_label = None
         self._bg_rect = None
-        # Não buildamos no init para evitar erros de contexto
     
     def on_enter(self):
         self.build_ui()
-        Clock.schedule_interval(self.update_marquee, 0.2)
+        self.update_display_text()
 
-    def on_leave(self):
-        Clock.unschedule(self.update_marquee)
-
-    def update_marquee(self, dt):
+    def update_display_text(self, *args):
         if not self.display_label: return
         app = App.get_running_app()
-        full_text = f" CONECTADO: {app.tv_name} ({app.tv_ip})  ***  "
-        if len(full_text) < 20:
-            self.display_label.text = full_text
-            return
-        self.marquee_offset = (self.marquee_offset + 1) % len(full_text)
-        display_part = full_text[self.marquee_offset:] + full_text[:self.marquee_offset]
-        self.display_label.text = display_part[:25]
+        if app.tv_ip:
+            self.display_label.text = f"CONECTADO: {app.tv_name} ({app.tv_ip})"
+        else:
+            self.display_label.text = "NÃO CONECTADO"
 
     def build_ui(self):
         self.clear_widgets()
@@ -53,9 +45,19 @@ class RemotePortraitScreen(Screen):
         
         # Barra Superior
         top_bar = BoxLayout(size_hint_y=None, height=dp(60), spacing=dp(10))
+        
+        # Display estático na arte superior esquerda
         display_btn = Button(background_color=theme_manager.display_bg, size_hint_x=0.8)
         display_btn.bind(on_press=lambda x: app.show_rename_popup())
-        self.display_label = Label(text="Conectando...", bold=True, color=theme_manager.display_text, font_size='18sp')
+        self.display_label = Label(
+            text="Carregando...", 
+            bold=True, 
+            color=theme_manager.display_text, 
+            font_size='14sp',
+            halign='left',
+            valign='middle'
+        )
+        self.display_label.bind(size=self.display_label.setter('text_size'))
         display_btn.add_widget(self.display_label)
         top_bar.add_widget(display_btn)
         
