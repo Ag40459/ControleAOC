@@ -19,10 +19,14 @@ class ScanScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.name = 'scan_screen'
-        theme_manager.bind(bg_color=self._update_bg)
+        # Vincula a atualização do fundo à mudança da cor de fundo no theme_manager
+        theme_manager.bind(bg_color=self._update_canvas)
         self.build_ui()
 
-    def _update_bg(self, *args):
+    def on_enter(self):
+        self._update_canvas()
+
+    def _update_canvas(self, *args):
         self.canvas.before.clear()
         with self.canvas.before:
             Color(*theme_manager.bg_color)
@@ -33,15 +37,21 @@ class ScanScreen(Screen):
         self.clear_widgets()
         layout = BoxLayout(orientation='vertical', padding=dp(20), spacing=dp(10))
         
-        # Cabeçalho e Temas
-        header = BoxLayout(size_hint_y=None, height=dp(50))
-        header.add_widget(Label(text='CONTROLE AOC', font_size='24sp', bold=True, color=theme_manager.primary_color))
+        # Cabeçalho
+        header = Label(text='CONTROLE AOC', font_size='24sp', bold=True, color=theme_manager.primary_color, size_hint_y=None, height=dp(50))
         layout.add_widget(header)
         
+        # Seletor de Temas
         theme_box = BoxLayout(size_hint_y=None, height=dp(40), spacing=dp(5))
         theme_box.add_widget(Label(text="Tema:", color=theme_manager.text_color, size_hint_x=0.3))
         for t_name in theme_manager.themes.keys():
-            btn = Button(text=t_name, font_size='12sp', background_color=theme_manager.primary_color if theme_manager.theme_name == t_name else [0.3, 0.3, 0.3, 1])
+            is_active = theme_manager.theme_name == t_name
+            btn = Button(
+                text=t_name, 
+                font_size='12sp', 
+                background_color=theme_manager.primary_color if is_active else [0.3, 0.3, 0.3, 1],
+                color=[1, 1, 1, 1] if is_active else [0.8, 0.8, 0.8, 1]
+            )
             btn.bind(on_press=lambda x, n=t_name: theme_manager.set_theme(n))
             theme_box.add_widget(btn)
         layout.add_widget(theme_box)

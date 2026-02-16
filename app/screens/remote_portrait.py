@@ -12,28 +12,29 @@ class RemotePortraitScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.name = 'remote_portrait'
-        theme_manager.bind(bg_color=self._update_ui)
+        # Vincula a atualização à mudança de qualquer propriedade do tema
+        theme_manager.bind(bg_color=self._update_canvas)
+        theme_manager.bind(primary_color=self._update_canvas)
 
     def on_enter(self):
-        self.build_ui()
+        self._update_canvas()
 
-    def _update_ui(self, *args):
-        if self.parent: self.build_ui()
+    def _update_canvas(self, *args):
+        self.canvas.before.clear()
+        with self.canvas.before:
+            Color(*theme_manager.bg_color)
+            self.rect = Rectangle(pos=self.pos, size=self.size)
+        self.build_ui()
 
     def build_ui(self):
         self.clear_widgets()
         app = App.get_running_app()
         
-        with self.canvas.before:
-            Color(*theme_manager.bg_color)
-            self.rect = Rectangle(pos=self.pos, size=self.size)
-
         main_layout = BoxLayout(orientation='vertical', padding=dp(10), spacing=dp(10))
         
         # BARRA SUPERIOR (Display e Power)
         top_bar = BoxLayout(size_hint_y=None, height=dp(60), spacing=dp(10))
         
-        # Display de IP (Clicável para renomear)
         display_btn = Button(background_color=theme_manager.display_bg, size_hint_x=0.8)
         display_btn.bind(on_press=lambda x: app.show_rename_popup())
         display_content = BoxLayout(orientation='vertical', padding=dp(5))
@@ -47,7 +48,7 @@ class RemotePortraitScreen(Screen):
         top_bar.add_widget(pwr_btn)
         main_layout.add_widget(top_bar)
 
-        # ÁREA DE NAVEGAÇÃO (Central - Botões Grandes)
+        # ÁREA DE NAVEGAÇÃO
         nav_layout = GridLayout(cols=3, spacing=dp(5), size_hint_y=0.4)
         
         # Linha 1
@@ -67,40 +68,26 @@ class RemotePortraitScreen(Screen):
         
         main_layout.add_widget(nav_layout)
 
-        # ÁREA DE CONTROLE INFERIOR (Volume à Direita e Canais à Esquerda)
+        # ÁREA DE CONTROLE INFERIOR
         control_layout = BoxLayout(spacing=dp(15), size_hint_y=0.4)
         
-        # Canais (Esquerda)
+        # Canais
         chan_box = BoxLayout(orientation='vertical', spacing=dp(5))
-        chan_up = Button(text="CH +", font_size='20sp', bold=True)
-        chan_up.bind(on_press=lambda x: app.send_command("ChannelUp"))
-        chan_down = Button(text="CH -", font_size='20sp', bold=True)
-        chan_down.bind(on_press=lambda x: app.send_command("ChannelDown"))
-        chan_box.add_widget(chan_up)
-        chan_box.add_widget(chan_down)
+        chan_box.add_widget(Button(text="CH +", font_size='20sp', bold=True, on_press=lambda x: app.send_command("ChannelUp")))
+        chan_box.add_widget(Button(text="CH -", font_size='20sp', bold=True, on_press=lambda x: app.send_command("ChannelDown")))
         control_layout.add_widget(chan_box)
         
-        # Botões de Utilidade (Centro)
+        # Utilidade
         util_box = BoxLayout(orientation='vertical', spacing=dp(5), size_hint_x=0.6)
-        mute_btn = Button(text="MUTE", background_color=[0.5, 0.5, 0.5, 1])
-        mute_btn.bind(on_press=lambda x: app.send_command("Mute"))
-        key_btn = Button(text="TECLADO (123)", background_color=theme_manager.primary_color)
-        key_btn.bind(on_press=lambda x: app.show_numeric_keyboard())
-        scan_btn = Button(text="BUSCAR TV", font_size='12sp')
-        scan_btn.bind(on_press=lambda x: app.go_to_scan())
-        util_box.add_widget(mute_btn)
-        util_box.add_widget(key_btn)
-        util_box.add_widget(scan_btn)
+        util_box.add_widget(Button(text="MUTE", background_color=[0.5, 0.5, 0.5, 1], on_press=lambda x: app.send_command("Mute")))
+        util_box.add_widget(Button(text="TECLADO (123)", background_color=theme_manager.primary_color, on_press=lambda x: app.show_numeric_keyboard()))
+        util_box.add_widget(Button(text="BUSCAR TV", font_size='12sp', on_press=lambda x: app.go_to_scan()))
         control_layout.add_widget(util_box)
         
-        # VOLUME (Direita - Grande destaque)
+        # VOLUME (Direita)
         vol_box = BoxLayout(orientation='vertical', spacing=dp(5))
-        vol_up = Button(text="VOL +", font_size='22sp', bold=True, background_color=theme_manager.primary_color)
-        vol_up.bind(on_press=lambda x: app.send_command("VolumeUp"))
-        vol_down = Button(text="VOL -", font_size='22sp', bold=True, background_color=theme_manager.primary_color)
-        vol_down.bind(on_press=lambda x: app.send_command("VolumeDown"))
-        vol_box.add_widget(vol_up)
-        vol_box.add_widget(vol_down)
+        vol_box.add_widget(Button(text="VOL +", font_size='22sp', bold=True, background_color=theme_manager.primary_color, on_press=lambda x: app.send_command("VolumeUp")))
+        vol_box.add_widget(Button(text="VOL -", font_size='22sp', bold=True, background_color=theme_manager.primary_color, on_press=lambda x: app.send_command("VolumeDown")))
         control_layout.add_widget(vol_box)
         
         main_layout.add_widget(control_layout)

@@ -11,22 +11,24 @@ class RemoteLandscapeScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.name = 'remote_landscape'
-        theme_manager.bind(bg_color=self._update_ui)
+        # Vincula a atualização à mudança de qualquer propriedade do tema
+        theme_manager.bind(bg_color=self._update_canvas)
+        theme_manager.bind(primary_color=self._update_canvas)
 
     def on_enter(self):
-        self.build_ui()
+        self._update_canvas()
 
-    def _update_ui(self, *args):
-        if self.parent: self.build_ui()
+    def _update_canvas(self, *args):
+        self.canvas.before.clear()
+        with self.canvas.before:
+            Color(*theme_manager.bg_color)
+            self.rect = Rectangle(pos=self.pos, size=self.size)
+        self.build_ui()
 
     def build_ui(self):
         self.clear_widgets()
         app = App.get_running_app()
         
-        with self.canvas.before:
-            Color(*theme_manager.bg_color)
-            self.rect = Rectangle(pos=self.pos, size=self.size)
-
         main_layout = BoxLayout(orientation='horizontal', padding=dp(10), spacing=dp(15))
         
         # COLUNA ESQUERDA (Canais e Home/Back)
